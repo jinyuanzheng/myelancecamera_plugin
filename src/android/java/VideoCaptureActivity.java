@@ -70,16 +70,16 @@ public class VideoCaptureActivity extends Activity {
 		
 		// Create a Preview and set it as the content of activity.
 		cameraPreview = new ForegroundCameraPreview(this, camera);
-		cameraPreviewFrame = (FrameLayout) findViewById(getResources().getIdentifier("camera_preview", "layout", getPackageName()));
+		cameraPreviewFrame = (FrameLayout) findViewById(getResources().getIdentifier("videocamera_preview", "id", getPackageName()));
 		cameraPreviewFrame.addView(cameraPreview);
         // we'll enable this button once the camera is ready
-		progressBar = (ProgressBar) findViewById(getResources().getIdentifier("progressBar1", "layout", getPackageName()));
+		progressBar = (ProgressBar) findViewById(getResources().getIdentifier("progressBar1", "id", getPackageName()));
 		progressBar.setVisibility(ProgressBar.VISIBLE);
         progressBar.setProgress(0);
         progressBar.setMax(4500);
         recordingTime = 0;
         
-        Button captureButton = (Button) findViewById(getResources().getIdentifier("button_capture", "layout", getPackageName()));
+        Button captureButton = (Button) findViewById(getResources().getIdentifier("button_capture", "id", getPackageName()));
 		captureButton.setOnTouchListener(new OnTouchListener() {
 
 			@Override
@@ -103,7 +103,7 @@ public class VideoCaptureActivity extends Activity {
 			}
 		});
 		
-        Button previewButton = (Button) findViewById(getResources().getIdentifier("button_preview", "layout", getPackageName()));
+        Button previewButton = (Button) findViewById(getResources().getIdentifier("button_preview", "id", getPackageName()));
         previewButton.setOnClickListener(new View.OnClickListener() {
 
         	 public void onClick(View v) {
@@ -130,7 +130,7 @@ public class VideoCaptureActivity extends Activity {
 			}
 		});		
         
-        Button cancelButton = (Button) findViewById(getResources().getIdentifier("button_cancel", "layout", getPackageName()));
+        Button cancelButton = (Button) findViewById(getResources().getIdentifier("button_cancel", "id", getPackageName()));
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 		    public void onClick(View v) {
 		    	releaseResources();

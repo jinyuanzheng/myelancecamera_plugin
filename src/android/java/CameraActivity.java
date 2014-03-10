@@ -72,9 +72,6 @@ public class CameraActivity extends Activity {
 				if (pressed)
 				    return;
 		
-				// Set pressed = true to prevent freezing.
-				// Issue 1 at
-				// http://code.google.com/p/foreground-camera-plugin/issues/detail?id=1
 				pressed = true;
 		
 				// get an image from the camera

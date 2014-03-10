@@ -18,12 +18,21 @@
         <config-file target="res/xml/config.xml" parent="/*">
 		    <feature name="ForegroundCameraLauncher">
 		        <param name="android-package" value="com.wancheng.customcamera.ForegroundCameraLauncher" />
-		        <param name="ios-package" value="ForegroundCameraLauncher" />
     		</feature>
-    		<feature name="LocalStorage">
-        		<param name="ios-package" value="CDVLocalStorage" />
-		    </feature>    
         </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+	        <uses-permission android:name="android.permission.CAMERA" />
+		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	        <uses-feature android:name="android.hardware.camera" />
+		    <uses-feature android:name="android.hardware.camera.autofocus" />
+	    </config-file>
+	    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.CameraActivity" android:screenOrientation="portrait" />
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.VideoCaptureActivity" android:screenOrientation="portrait" />
+	        <activity android:label="ForegroundCameraPlugin" android:name="com.wancheng.customcamera.AudioRecordActivity" android:screenOrientation="portrait" />
+	    </config-file>
 
         <source-file src="src/android/java/AudioRecordActivity.java" target-dir="src/com/wancheng/customcamera" />      
         <source-file src="src/android/java/CameraActivity.java" target-dir="src/com/wancheng/customcamera" />      

@@ -27,6 +27,7 @@ import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 
 /**
  * This class launches the camera view, allows the user to take a picture,
@@ -110,7 +111,6 @@ public class ForegroundCameraLauncher extends CordovaPlugin implements MediaScan
             if(ACTION_TAKE_PICTURE_ENTRY.equals(action)){
             	bVideoRecording = false;
                 this.takePicture();
-                
                 PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
                 r.setKeepCallback(true);
                 callbackContext.sendPluginResult(r);
@@ -159,6 +159,8 @@ public class ForegroundCameraLauncher extends CordovaPlugin implements MediaScan
 	 * 
 	 */    
 	public void takePicture() {
+        Log.e("asdfas","=========================takePicture=================");
+
 		// Save the number of images currently on disk for later
 		this.numPics = queryImgDB().getCount();
 

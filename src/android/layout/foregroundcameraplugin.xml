@@ -27,7 +27,7 @@
         android:background="@drawable/preview_back" >
 
         <FrameLayout
-            android:id="@+id/camera_preview"
+            android:id="@+id/photocamera_preview"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:layout_gravity="center" >

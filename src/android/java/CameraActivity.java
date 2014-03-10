@@ -61,7 +61,7 @@ public class CameraActivity extends Activity {
 	
 		// Create a Preview and set it as the content of activity.
 		mPreview = new ForegroundCameraPreview(this, mCamera);
-		mFrameLayout = (FrameLayout) findViewById(getResources().getIdentifier("camera_view", "id", getPackageName()));
+		mFrameLayout = (FrameLayout) findViewById(getResources().getIdentifier("photocamera_preview", "id", getPackageName()));
 		mFrameLayout.addView(mPreview);
 	
 		// Add a listener to the Capture button
